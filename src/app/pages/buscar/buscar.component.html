@@ -1,40 +1,61 @@
 <section>
-<form #buscarForm="ngForm" (change)="buscar()"productos>
-  <div id="barra-busqueda">
-    <img src="./../../../assets/icons/lupa.svg" alt="Lupa">
-    <input type="text" name="texto" [(ngModel)]="parametrosBusqueda.texto" #texto="ngModel">
-  </div>
-  <div id="filtros-container">
-    <div class="apto-container">
-      <img src="./../../../assets/icons/celiaco.png" alt="Apto celíaco">
-      <input type="checkbox" name="celiaco" id="celiaco" [(ngModel)]="parametrosBusqueda.aptoCeliaco" #celiaco="ngModel">
-      <span>Apto celíaco</span>
+  <!-- Formulario de búsqueda -->
+  <form #buscarForm="ngForm" (change)="buscar()" productos>
+    <div id="barra-busqueda">
+      <img src="./../../../assets/icons/lupa.svg" alt="Lupa">
+      <input type="text" name="texto" [(ngModel)]="parametrosBusqueda.texto" #texto="ngModel">
     </div>
-    <div class="apto-container">
-      <img src="./../../../assets/icons/vegano.svg" alt="Apto vegano">
-      <input type="checkbox" name="vegano" id="vegano" [(ngModel)]="parametrosBusqueda.aptoVegano" #vegano="ngModel">
-    <span>Apto vegano</span>
-  </div>
-</div>
-</form>
-@defer (when !cargando()){
+    <div id="filtros-container">
+      <div class="apto-container">
+        <img src="./../../../assets/icons/celiaco.png" alt="Apto celíaco">
+        <input type="checkbox" name="celiaco" id="celiaco" [(ngModel)]="parametrosBusqueda.aptoCeliaco" #celiaco="ngModel">
+        <span>Apto celíaco</span>
+      </div>
+      <div class="apto-container">
+        <img src="./../../../assets/icons/vegano.svg" alt="Apto vegano">
+        <input type="checkbox" name="vegano" id="vegano" [(ngModel)]="parametrosBusqueda.aptoVegano" #vegano="ngModel">
+        <span>Apto vegano</span>
+      </div>
+    </div>
+  </form>
 
-@if (productos().length !== 0) {
-<div id="contenedor-productos">
-  @for (producto of productos(); track producto) {
-  <app-tarjeta-producto
-  [producto]="producto"
-  [routerLink]="['/articulo',producto.id]"
-  >
-</app-tarjeta-producto>
-}
-</div>
-} @else {
-  <h2>Tu búsqueda no arrojó ningun resultado</h2>
-}
-} @loading (minimum 500ms) {
-  <div class="flex-center">
-    <img src="./../../../assets/icons/spinner.svg" alt="Cargando">
+  <!-- Mostrar productos y manejo de carga -->
+  @defer (when !cargando()) {
+    @if (productos().length !== 0) {
+      <div id="contenedor-productos">
+        @for (producto of productos(); track producto) {
+          <app-tarjeta-producto
+            [producto]="producto"
+            [routerLink]="['/articulo', producto.id]"
+          ></app-tarjeta-producto>
+        }
+      </div>
+    } @else {
+      <h2>No se encontraron resultados de tu búsqueda</h2>
+    }
+  } @loading (minimum 500ms) {
+    <!-- Spinner de carga -->
+    <div class="flex-center">
+      <img src="./../../../assets/icons/spinner.svg" alt="Cargando">
+    </div>
+  }
+
+  <!-- Controles de paginación -->
+  <div class="pagination-controls" *ngIf="!cargando() && productos().length > 0">
+    <button 
+      (click)="cambiarPagina(-1)" 
+      [disabled]="paginaActual() === 1"
+    >
+      Anterior
+    </button>
+    <span>
+      Página {{ paginaActual() }} de {{ Math.ceil(totalProductos() / productosPorPagina) }}
+    </span>
+    <button
+      (click)="cambiarPagina(1)" 
+      [disabled]="paginaActual() === Math.ceil(totalProductos() / productosPorPagina)"
+    >
+      Siguiente
+    </button>
   </div>
-}
 </section>

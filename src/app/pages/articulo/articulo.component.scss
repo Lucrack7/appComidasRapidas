@@ -1,28 +1,54 @@
 @use "./../../../assets/styles/variables.scss";
 
-#fotoProducto{
-  width: 100%;
-  height: 300px;
-  position: absolute;
-  top: 0;
+.ingredientes-img {
+  display: flex; /* Organiza la imagen y la lista de ingredientes en una fila */
+  align-items: center; /* Alinea la imagen y la lista en el centro */
+  gap: 20px; /* Espacio entre la imagen y la lista */
+  position: relative;
+  top: 50px;
   z-index: -1;
-  object-fit: cover;
+  justify-content: center;
 }
 
+#fotoProducto {
+  width: 150px;  /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;  /* Mantiene la relación de aspecto */
+  object-fit: contain;  /* Asegura que la imagen no se distorsione */
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;  /* Elimina los puntos de la lista */
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Hace que los elementos de la lista se alineen en columna */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ul li {
+  margin-bottom: 7px;  /* Espacio entre los ingredientes */
+}
+
+ul li:not(:last-of-type)::after {
+  content: ", ";  /* Añade una coma después de cada ingrediente, excepto el último */
+}
+
+span {
+  font-weight: bold;  /* Resalta la palabra "Ingredientes:" */
+  margin-bottom: 12px;
+}
+
+
+
 .margen-chico{
-  margin-top: 230px;
+  margin-top: 80px;
 }
 
 .margen-chico > * {
   margin-bottom: 10px;
 }
 
-ul li {
-  display: inline;
-  &:not(:last-of-type)::after{
-    content: ", ";
-  }
-}
+
 
 .apto-container{
   display: flex;
@@ -34,15 +60,25 @@ ul li {
   }
 }
 
+label{
+  font-size: 22px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
 textarea{
-  display: block;
+  width: 40rem;
+  margin-top: 10px;
+  margin-left: 30%;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+  display: flex;
   border-radius: variables.$border-radius-chico;
   border: unset;
   background-color: variables.$color-principal-claro;
-  margin-top: 10px;
   resize:vertical;
-  width: calc(100% - 30px);
-  padding: 15px;
   &:focus{
     outline: none;
   }
@@ -50,15 +86,55 @@ textarea{
 
 #cantidad-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
+  gap: 10px;
 }
 
 button{
-  width: 100%;
+  width: 400px;
   border-radius: variables.$border-radius-chico;
   border: unset;
-  background-color: variables.$color-principal-claro;
-  font-size: larger;
+  background-color: rgb(145, 254, 145);
+  font-size: medium;
   padding: 10px;
+  position: relative;
+  max-width: 50%;
+  margin-left: 40%;
+}
+
+button:hover{
+  background-color: rgb(81, 253, 81);
+}
+
+/* Medias query para pantallas pequeñas (por ejemplo, menos de 768px de ancho) */
+@media (max-width: 768px) {
+  button{
+    width: 400px;
+    border-radius: variables.$border-radius-chico;
+    border: unset;
+    background-color: rgb(145, 254, 145);
+    font-size: medium;
+    padding: 10px;
+    position: relative;
+    max-width: 50%;
+    margin-left: 20%;
+    margin-bottom: 30%;
+  }
+  textarea{
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 0;
+    padding: 35px;
+    display: block;
+    border-radius: variables.$border-radius-chico;
+    border: unset;
+    background-color: variables.$color-principal-claro;
+    resize:vertical;
+    &:focus{
+      outline: none;
+    }
+  }
+
 }

@@ -1,40 +1,6 @@
 [
   {
     "id": 1,
-    "nombre": "Pizzas",
-    "fotoUrl": "https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg",
-    "productos": [
-      {
-        "id": "7",
-        "nombre":"Pizza común",
-        "precio": 1000,
-        "esVegano":false,
-        "esCeliaco":false,
-        "ingredientes": ["Muzarella","Aceitunas","Orégano"],
-        "fotoUrl": "https://caserissimo.com/wp-content/uploads/2015/08/pizabuaur1-1024x768.jpg"
-      },
-      {
-        "id": "8",
-        "nombre":"Pizza especial",
-        "precio": 1200,
-        "esVegano":false,
-        "esCeliaco":false,
-        "ingredientes": ["Muzarella","Aceitunas","Morrones","Tomate","Huevo"],
-        "fotoUrl": "https://images-gmi-pmc.edge-generalmills.com/fce31bdd-1931-4f30-adef-a5bac0864676.jpg"
-      },
-      {
-        "id": "9",
-        "nombre":"Pizza 4 quesos",
-        "precio": 1300,
-        "esVegano":false,
-        "esCeliaco":false,
-        "ingredientes": ["Muzarella","Roquefort","Provolone","Parmesano"],
-        "fotoUrl": "https://www.gourmet.cl/wp-content/uploads/2017/04/pizza-570x458.jpg"
-      }
-    ]
-  },
-  {
-    "id": 2,
     "nombre": "Hamburguesas",
     "fotoUrl": "https://img.freepik.com/vector-gratis/hamburguesa-realista-sobre-fondo-pizarra_79603-1042.jpg?w=2000",
     "productos": [
@@ -50,16 +16,16 @@
       {
         "id": "2",
         "nombre":"Hamburguesa especial",
-        "precio": 1500,
+        "precio": 3500,
         "esVegano":false,
         "esCeliaco":false,
         "ingredientes": ["Carne de ternera","Pan Brioche","Queso", "Tomate", "Lechuga"],
-        "fotoUrl": "https://elsheriffburger.com/uploads/lh90_elsheriffbuger/products/54/es/img-H.-Especial-5-WEB-de-taman%CC%83o-mediano.jpg"
+        "fotoUrl": "https://www.elcorral.com.ec/img/our-cart/20221020034351.jpeg"
       },
       {
         "id": "3",
         "nombre":"Hamburguesa vegana",
-        "precio": 1300,
+        "precio": 1500,
         "esVegano":true,
         "esCeliaco":false,
         "ingredientes": ["Medallón a base de lentejas","Pan Brioche","Tomate"],
@@ -77,7 +43,7 @@
       {
         "id": "5",
         "nombre":"Hamburguesa americana",
-        "precio": 3500,
+        "precio": 2500,
         "esVegano":false,
         "esCeliaco":false,
         "ingredientes": ["Carne de ternera","Pan Brioche","Queso","Salsa secreta BBQ", "Panceta"],
@@ -91,9 +57,135 @@
         "esCeliaco":true,
         "ingredientes": ["Medallón a base de lentejas","Tomate","Lechuga"],
         "fotoUrl": "https://canalcocina.es/medias/images/1010_Coc_RecetasDeAnnie_HamburguesaQueso.jpg"
+      },
+      {
+        "id": "20",
+        "nombre":"Hamburguesa de Pollo",
+        "precio": 2000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["pechuga de pollo marinada", "mezcla de especias",  "hierbas"],
+        "fotoUrl": "https://cdn0.uncomo.com/es/posts/9/4/4/hamburguesa_de_pollo_53449_1_600.webp"
+      },
+      {
+        "id": "21",
+        "nombre":"Hamburguesa de Pavo",
+        "precio": 3500,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Carne de Pavo", "pan tostado", "lechuga",  "tomate", "salsa de yogur griego"],
+        "fotoUrl": "https://cdn0.uncomo.com/es/posts/9/4/4/hamburguesa_de_pavo_53449_3_600.webp"
+      },
+      {
+        "id": "22",
+        "nombre":"Hamburguesa BBQ",
+        "precio": 3500,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Carne de Pavo", "pan de brioche tostado", "aros de cebolla frita", "tocino crujiente", "rebanada de queso cheddar"],
+        "fotoUrl": "https://cdn0.uncomo.com/es/posts/9/4/4/hamburguesa_bbq_53449_4_600.webp"
+      },
+      {
+        "id": "23",
+        "nombre":"Hamburguesa de Sushi",
+        "precio": 5000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Salmón", "arroz, alga nori", "aguacate", "pepino", "zanahoria", "salsa de soja y wasabi"],
+        "fotoUrl": "https://cdn0.uncomo.com/es/posts/9/4/4/hamburguesa_de_sushi_53449_5_600.webp"
+      },
+      {
+        "id": "24",
+        "nombre":"Hamburguesa Mexicana",
+        "precio": 1500,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Pan de maíz tostado", "guacamole fresco", "jalapeños en escabeche", "queso fresco", "salsa picante"],
+        "fotoUrl": "https://cdn0.uncomo.com/es/posts/9/4/4/hamburguesa_mexicana_53449_6_600.webp"
+      },
+      {
+        "id": "25",
+        "nombre":"Hamburguesa de Salmón",
+        "precio": 1500,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Filetes de salmón fresco", "pan de hamburguesa tostado", "aguacate", "pepino", "cebolla roja", "mayonesa de eneldo"],
+        "fotoUrl": "https://cdn0.uncomo.com/es/posts/9/4/4/hamburguesa_de_salmon_53449_7_600.webp"
       }
     ]
   },
+
+  {
+    "id": 2,
+    "nombre": "Pizzas",
+    "fotoUrl": "https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg",
+    "productos": [
+      {
+        "id": "7",
+        "nombre":"Pizza común",
+        "precio": 1000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Muzarella","Aceitunas","Orégano"],
+        "fotoUrl": "https://caserissimo.com/wp-content/uploads/2015/08/pizabuaur1-1024x768.jpg"
+      },
+      {
+        "id": "8",
+        "nombre":"Pizza especial",
+        "precio": 2200,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Muzarella","Aceitunas","Morrones","Tomate","Huevo"],
+        "fotoUrl": "https://images-gmi-pmc.edge-generalmills.com/fce31bdd-1931-4f30-adef-a5bac0864676.jpg"
+      },
+      {
+        "id": "9",
+        "nombre":"Pizza 4 quesos",
+        "precio": 2000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Muzarella","Roquefort","Provolone","Parmesano"],
+        "fotoUrl": "https://www.gourmet.cl/wp-content/uploads/2017/04/pizza-570x458.jpg"
+      },
+      {
+        "id": "26",
+        "nombre":"Pizza Napolitana",
+        "precio": 2300,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": [ "Tomate", "queso", "albahaca", "aceite de oliva"],
+        "fotoUrl": "https://lh3.googleusercontent.com/gR3PvLL9HJP8bFAr_aDhMDXFkP5i-YfMDW-1ubmDxGzKEmwQ2qq33QI5WRuIaQK4dGhrtSgwqIyV8Jj8M5pM_jxLNHJLX_y7-4w=s0"
+      },
+      {
+        "id": "27",
+        "nombre":"Pizza Siciliana",
+        "precio": 2000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": [ "Tomate", "muzarella", "oregano", "aceitunas"],
+        "fotoUrl": "https://lh3.googleusercontent.com/WmssWj_e3VhC1d37GKrWPxqB4fXnjEzyY2MefzA-epSqrtakxZgx8kVYJtwuw8wCdRnPXh9eznQiY6oesT8Sj_exB4OuBXBERw=s0"
+      },
+      {
+        "id": "28",
+        "nombre":"Pizza Vegetariana",
+        "precio": 2000,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": [ "Calabacín", "espinacas", "berenjena"],
+        "fotoUrl": "https://lh3.googleusercontent.com/o0LU0ZKszBnKk84PRujLTIUz1PGpaqEykE9pUJcjKO7uqZPXE8FSxsXgvbJU-wkiMW4A4kZNqDWwcmwKn6DI-v6s6z_fhfcUP7RH=s0"
+      },
+      {
+        "id": "29",
+        "nombre":"Pizza de Pollo",
+        "precio": 1200,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": [ "champiñones", "aceitunas negras"],
+        "fotoUrl": "https://lh3.googleusercontent.com/tZD7-WyQmIbQNSJxmIdP_iWBiomxVa65EfSf7FPcN4ywbrz2JpSNrRp7L4d8HYzMD_buttGMKVXcijoiwPUx457JWiE4JdrZTvs=s0"
+      }
+    ]
+  },
+
   {
     "id": 3,
     "nombre": "Postres",
@@ -102,29 +194,56 @@
       {
         "id": "10",
         "nombre":"Tiramisú",
-        "precio": 800,
+        "precio": 200,
         "esVegano":false,
         "esCeliaco":true,
-        "ingredientes": [],
+        "ingredientes": ["Vainilla", "queso crema", "bizcochos empapados en café", "crema de mascarpone", "cacao en polvo"],
         "fotoUrl": "https://i.blogs.es/410470/vasitos/1366_2000.jpeg"
       },
       {
         "id": "11",
         "nombre":"Chocotorta",
-        "precio": 800,
+        "precio": 3500,
         "esVegano":false,
         "esCeliaco":false,
-        "ingredientes": [],
-        "fotoUrl": "https://www.cronica.com.ar/__export/1653520801548/sites/cronica/img/2021/06/17/chocotorta_2_crop1623944104124.jpg_792575817.jpg"
+        "ingredientes": ["Chocolinas", "bombones", "crema de dulce de leche con queso blanco"],
+        "fotoUrl": "https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2018%2F09%2F14170007%2Fchocotorta-destacada.jpg?auth=57d10ca07537b68d48cf4d6181e52634edcc4d3f6dd7340aa9eb73af9fd65f07&smart=true&width=1200&height=1200&quality=85"
       },
       {
         "id": "12",
         "nombre":"Turrón de Quaker",
-        "precio": 800,
+        "precio": 1500,
         "esVegano":false,
         "esCeliaco":false,
-        "ingredientes": [],
+        "ingredientes": ["Turrón de avena", "chocolate"],
         "fotoUrl": "https://assets.elgourmet.com/wp-content/uploads/2023/03/cover_ipk5fgqbdh_eg-pf-platos-turron-de-avena-hi-03.jpg"
+      },
+      {
+        "id": "30",
+        "nombre":"Panqueques",
+        "precio": 1000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Crepe", "dulce de leche"],
+        "fotoUrl": "https://mejoresdulces.com/wp-content/uploads/2023/03/panqueques-con-dulce-de-leche.jpg"
+      },
+      {
+        "id": "31",
+        "nombre":"Alfajores artesanales",
+        "precio": 1000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Chocolate", "dulce de leche"],
+        "fotoUrl": "https://laplumaonline.com.ar/download/multimedia.normal.9093bd554e8c509c.NDk2NjgxX2xhbmRzY2FwZV9ub3JtYWwud2VicA%3D%3D.webp"
+      },
+      {
+        "id": "32",
+        "nombre":"Flan",
+        "precio": 2000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": ["Crema", "dulce de leche"],
+        "fotoUrl": "https://vocescriticas-s3.cdn.net.ar/s3i233/2023/07/vocescriticas/images/15/56/155650_7a8efee2f7a8de32b39da6c0fd6b4f900ca9d7e107eb21fe03a304ce3ca49d0f/sm.jpg"
       }
     ]
   },
@@ -136,7 +255,7 @@
       {
         "id": "13",
         "nombre":"Agua",
-        "precio": 100,
+        "precio": 1000,
         "esVegano":true,
         "esCeliaco":true,
         "ingredientes": [],
@@ -145,20 +264,92 @@
       {
         "id": "14",
         "nombre":"Agua Saborizada Naranja",
-        "precio": 100,
+        "precio": 1300,
         "esVegano":true,
         "esCeliaco":true,
-        "ingredientes": [],
+        "ingredientes": ["Naranja"],
         "fotoUrl": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3040783_f.jpg"
       },
       {
         "id": "15",
         "nombre":"Fanta Uva",
-        "precio": 100,
+        "precio": 2000,
         "esVegano":true,
         "esCeliaco":true,
-        "ingredientes": [],
+        "ingredientes": ["Uva"],
         "fotoUrl": "https://carrefourar.vtexassets.com/arquivos/ids/332920/7790895648670_E02.jpg?v=638212197029330000"
+      },
+      {
+        "id": "33",
+        "nombre":"Fanta Naranja",
+        "precio": 2000,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": ["Naranja"],
+        "fotoUrl": "https://www.coca-cola.com/content/dam/onexp/pe/es/brands/fanta/fanta-naranja.jpg"
+      },
+      {
+        "id": "34",
+        "nombre":"Fanta Limón",
+        "precio": 2000,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": ["Limón"],
+        "fotoUrl": "https://www.supermercadolibero.com.ar/images/stories/virtuemart/product/fanta%20limon.jpg"
+      },
+      {
+        "id": "34",
+        "nombre":"Coca Cola Zero",
+        "precio": 3000,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": ["Aceites de naranja", "limón", "vainilla"],
+        "fotoUrl": "https://jumboargentina.vtexassets.com/arquivos/ids/799869-800-600?v=638349573657430000&width=800&height=600&aspect=true"
+      },
+      {
+        "id": "35",
+        "nombre":"Coca Cola",
+        "precio": 3000,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": ["Azúcar", "aceites de naranja", "limón", "vainilla"],
+        "fotoUrl": "https://www.coca-cola.com/content/dam/onexp/sv/es/brands/coca-cola/7840058004055.png"
+      },
+      {
+        "id": "36",
+        "nombre":"Sprite",
+        "precio": 2000,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": ["Azúcar","limón", "lima"],
+        "fotoUrl": "https://labebidadetusfiestas.com.ar/46004/sprite-lima-limon-pet-1500cc.jpg"
+      },
+      {
+        "id": "37",
+        "nombre":"Sprite Zero",
+        "precio": 2000,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": ["Limón", "lima"],
+        "fotoUrl": "https://laregional.cl/wp-content/uploads/2023/02/Bebidas_0032_SPRITE-ZERO-1.5-LTS-324x324.jpg"
+      },
+      {
+        "id": "38",
+        "nombre":"Pritty zero",
+        "precio": 2700,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": ["Limón"],
+        "fotoUrl": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3080404_f.jpg"
+      },
+      {
+        "id": "39",
+        "nombre":"Pritty",
+        "precio": 2700,
+        "esVegano":true,
+        "esCeliaco":true,
+        "ingredientes": ["Azúcar", "Limón"],
+        "fotoUrl": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3080445_f.jpg"
       }
     ]
   },
@@ -175,6 +366,15 @@
         "esCeliaco":false,
         "ingredientes": [],
         "fotoUrl": "https://thepostsportsbar.com/wp-content/uploads/2019/07/ALL-Pizzas-0045-top-down.jpg"
+      },
+      {
+        "id": "40",
+        "nombre":"Hamburguesa con queso (2 hamburguesas con papas y 2 gaseosas)",
+        "precio": 7000,
+        "esVegano":false,
+        "esCeliaco":false,
+        "ingredientes": [],
+        "fotoUrl": "https://ypfloscorralitos.com.ar/wp-content/uploads/2020/07/Combo-2-Hamburguesa-Doble-1.png"
       }
     ]
   },
@@ -208,7 +408,7 @@
         "esVegano":true,
         "esCeliaco":true,
         "ingredientes": ["Lechuga","Tomate","Zanahoria"],
-        "fotoUrl": "https://www.plantheoshops.com.ar/mitienda/galeria/files/5/61b36abcb06eb_1639148220-7227.jpeg"
+        "fotoUrl": "https://babelcafeloungebar.com/wp-content/uploads/2021/02/ensalada-simple-babel.jpg"
       }
     ]
   }

@@ -34,15 +34,65 @@ img{
   height: 100%;
 }
 
-#contenedor-productos{
+#contenedor-productos {
+  width: 50%;
   margin: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  min-width: 80%;
+  grid-template-columns: repeat(2, 1fr); /* Esto crea dos columnas de igual tamaño */
+  gap: 15px; /* Ajuste del espacio entre los elementos */
+  position: relative;
+  padding: 10px;
+  padding-left: 9%;
 }
+
 
 h2{
   margin-top: 50px;
   font-size: xx-large;
   text-align: center;
+  color: #b43232;
+}
+
+button{
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  display: inline;
+  position: relative;
+  margin-left: 30%;
+  gap: 12px;
+  border-radius: variables.$border-radius-chico;
+  border: unset;
+  background-color: rgb(127, 234, 255);
+  font-size: medium;
+}
+
+button:hover{
+  background-color: rgb(26, 151, 197);
+}
+
+/* Medias query para pantallas pequeñas (por ejemplo, menos de 768px de ancho) */
+@media (max-width: 768px) {
+  #contenedor-productos {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    width: 80%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+    padding-left: 0; /* Ajusta el padding según sea necesario */
+  }
+
+  button{
+    width: 100px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    display: inline;
+    position: relative;
+    margin-left: 10%;
+    gap: 12px;
+    border-radius: variables.$border-radius-chico;
+    border: unset;
+    background-color: rgb(127, 234, 255);
+    font-size: medium;
+  }
 }

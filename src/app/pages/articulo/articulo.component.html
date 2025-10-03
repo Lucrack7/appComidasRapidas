@@ -1,15 +1,19 @@
-<img
+<div class="ingredientes-img">
+  <img
   id="fotoProducto"
   src="{{ producto?.fotoUrl }}"
   alt="{{ producto?.nombre }}"
 />
+
+<ul>
+  <span>Ingredientes: </span>
+  @for (ingrediente of producto?.ingredientes; track ingrediente) {
+  <li>{{ ingrediente }}</li>
+}
+</ul>
+</div>
 <section class="margen-chico">
-  <ul>
-    <span>Ingredientes: </span>
-    @for (ingrediente of producto?.ingredientes; track ingrediente) {
-    <li>{{ ingrediente }}</li>
-    }
-  </ul>
+
   <div>
     @if (producto?.esCeliaco) {
     <div class="apto-container">

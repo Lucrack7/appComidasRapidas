@@ -16,8 +16,13 @@ $altura : 30px;
 button{
   border: unset;
   font-weight: bold;
-  background-color: variables.$color-principal;
+  background-color: #052fb8;
+  color: rgb(255, 255, 255);
   padding: 0 10px;
+}
+
+button:hover{
+  background-color: #0a1f4d;
 }
 
 span{

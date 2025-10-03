@@ -1,41 +1,43 @@
 @if (cartService.carrito.length !== 0) {
 
-    <section>
+<section>
   <div id="tarjetas-container" class="margen-chico">
     @for (producto of cartService.carrito; track producto; let i = $index) {
-  <div class="tarjeta-producto-container">
+    <div class="tarjeta-producto-container">
       @if (productosCarrito()[i]) {
 
-        <div id="izq" [ngStyle]="{'background-image': 'url('+productosCarrito()[i].fotoUrl+')'}">
-          <div>
-            @if (productosCarrito()[i].esVegano) {
-<img src="./../../../assets/icons/vegano.svg" alt="Apto vegano">
-}
-            @if (productosCarrito()[i].esCeliaco) {
-<img src="./../../../assets/icons/celiaco.png" alt="Apto celiaco">
-}
-          </div>
+      <div id="izq" [ngStyle]="{'background-image': 'url('+productosCarrito()[i].fotoUrl+')'}">
+        <div>
+          @if (productosCarrito()[i].esVegano) {
+          <img src="./../../../assets/icons/vegano.svg" alt="Apto vegano">
+          }
+          @if (productosCarrito()[i].esCeliaco) {
+          <img src="./../../../assets/icons/celiaco.png" alt="Apto celiaco">
+          }
         </div>
-        <div id="centro">
-          <p class="negrita">{{productosCarrito()[i].nombre}} </p>
-          @if (producto.notas !== '') {
-<p>{{producto.notas}}</p>
-}
-          <app-contador-cantidad [cantidadInicial]="producto.cantidad" (cantidadCambiada)="cambiarCantidadProducto(producto.idProducto,$event)"></app-contador-cantidad>
-        </div>
-        <div id="der">
-          <button id="borrar" (click)="eliminarProducto(producto.idProducto)">
-            <img src="./../../../assets/icons/borrar.png" alt="">
-          </button>
-          <p class="negrita">${{productosCarrito()[i].precio}}</p>
-        </div>
+      </div>
+      <div id="centro">
+        <p class="negrita">{{productosCarrito()[i].nombre}} </p>
+        @if (producto.notas !== '') {
+        <p>{{producto.notas}}</p>
+        }
+        <app-contador-cantidad [cantidadInicial]="producto.cantidad"
+          (cantidadCambiada)="cambiarCantidadProducto(producto.idProducto,$event)"></app-contador-cantidad>
+      </div>
+      <div id="der">
+        <button id="borrar" (click)="eliminarProducto(producto.idProducto)">
+          <img src="./../../../assets/icons/borrar.svg" alt="">
+        </button>
+        <p class="negrita">${{productosCarrito()[i].precio}}</p>
+      </div>
 
-}
+      }
     </div>
-}
+    }
   </div>
   <div class="flex-center">
-    <a id="mas" [routerLink]="['/']" routerLinkActive="router-link-active" >+</a>
+    <p class="agregar">Agregar más:</p>
+    <a id="mas" [routerLink]="['/']" routerLinkActive="router-link-active">+</a>
   </div>
 </section>
 <section class="margen-chico" id="informacion">
@@ -44,16 +46,16 @@
     <div>
       @if (perfilService.perfil()) {
 
-        <h4>{{perfilService.perfil()!.nombre}}</h4>
-        <p>{{perfilService.perfil()!.direccion}} - {{perfilService.perfil()?.telefono}}</p>
-        <p>{{perfilService.perfil()!.detalleEntrega}}</p>
+      <h4>{{perfilService.perfil()!.nombre}}</h4>
+      <p>{{perfilService.perfil()!.direccion}} - {{perfilService.perfil()?.telefono}}</p>
+      <p>{{perfilService.perfil()!.detalleEntrega}}</p>
       } @else {
-        <p>Ingresá tus datos de envío</p>
+      <p>Ingresá tus datos de envío</p>
       }
     </div>
     <div>
-      <a [routerLink]="['/perfil']" routerLinkActive="router-link-active" >
-        <img id="boton-editar-direccion" src="./../../../assets/icons/lapiz.png" alt="Editar">
+      <a [routerLink]="['/perfil']" routerLinkActive="router-link-active">
+        <img id="boton-editar-direccion" src="./../../../assets/icons/lapiz.svg" alt="Editar">
       </a>
     </div>
   </div>
@@ -73,7 +75,7 @@
 </section>
 
 } @else {
-  <h2>Tu carrito está vacío</h2>
+<h2>Tu carrito está vacío</h2>
 }
 <dialog method="modal" #dialog>
   <p>¿Pudiste realizar el pedido?</p>

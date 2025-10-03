@@ -3,6 +3,7 @@
 header{
   position: relative;
   height: 80px;
+  padding-bottom: 20px;
   background-color: variables.$color-principal;
   border-radius: 0 0 variables.$border-radius-mediano variables.$border-radius-mediano;
   display: flex;
@@ -14,21 +15,21 @@ header{
 header::before{
   position: absolute;
   content: "";
-  background-image: url("./../../../../assets/img/portada.jpg");
+  background: linear-gradient(rgba(39, 39, 39, 0.338), rgb(0, 0, 0)), url("./../../../../assets/img/portada.jpg");
   background-position: center;
   background-size: cover;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0;
+  opacity: 1;
   z-index: -1;
   transition: 500ms;
   border-radius: 0 0 variables.$border-radius-mediano variables.$border-radius-mediano;
 }
 
 header.extendido::before{
-  opacity: 0.5;
+  opacity: 1;
 }
 
 h1{
@@ -54,6 +55,7 @@ h1{
 }
 
 .fondo-imagen{
+  background-size: contain;
 
 }
 

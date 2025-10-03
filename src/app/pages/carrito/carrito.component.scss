@@ -12,12 +12,16 @@ h2{
   gap: 15px;
   border-radius: variables.$border-radius-chico;
   overflow: hidden;
+  width: 50%;
+  max-width: 50%;
+  position: relative;
+  margin-left: 30%;
 }
 
 .tarjeta-producto-container{
   position: relative;
   display: flex;
-  height: 100px;
+  height: 100%;
   background-color: variables.$color-principal-claro;
   > div{
     display: flex;
@@ -28,7 +32,8 @@ h2{
 }
 
 #izq{
-  width: 35%;
+  width: 20%;
+  height: 100px;
   background-color: bisque;
   background-size: cover;
   background-position: center;
@@ -55,23 +60,41 @@ h2{
 }
 
 #borrar{
-  background-color: unset;
+  background-color: #dfe7f8;
   border: unset;
   cursor: pointer;
   padding: 0;
+  width: 50px;
+  height: 50px;
 }
 
-#mas{
-  height: 38px;
+#mas {
+  height: 28px;
   font-size: xx-large;
+  text-align: center;
   text-decoration: none;
-  color: black;
-  background-color: variables.$color-principal-claro;
-  padding: 15px 30px;
+  color: rgb(255, 255, 255);
+  background-color: #052fb8;
+  padding: 15px 15px;
   border-radius: variables.$border-radius-chico;
 }
 
+#mas:hover{
+  background-color: #0a1f4d;
+}
+
+.agregar{
+  text-align: center;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 10px;
+}
+
 #informacion{
+  width: 50%;
+  margin-left: 30%;
   font-size: larger;
 }
 
@@ -98,19 +121,27 @@ h2{
 
 #enviar{
   display: block;
-  width: 100%;
+  width: 400px;
   margin-top: 20px;
+  margin-left: 35%;
+  max-width: 60%;
   font-size: larger;
-  background-color: variables.$color-principal;
+  background-color: rgb(145, 254, 145);
   border: unset;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px;
   border-radius: variables.$border-radius-chico;
   font-weight: bold;
 }
 
+#enviar:hover{
+  background-color: rgb(81, 253, 81);
+}
+
 #boton-editar-direccion{
   padding-right: 5px;
+  width: 30px;
+  height: 30px;
 }
 
 dialog{
@@ -145,3 +176,39 @@ dialog{
 }
 
 
+
+/* Medias query para pantallas pequeñas (por ejemplo, menos de 768px de ancho) */
+@media (max-width: 768px) {
+  #enviar{
+    background-color: rgb(145, 254, 145);
+    display: block;
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 15%;
+    max-width: 70%;
+    font-size: larger;
+    border: unset;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: variables.$border-radius-chico;
+    font-weight: bold;
+  }
+
+  #tarjetas-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: variables.$border-radius-chico;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    margin-left: 0;
+  }
+
+  #informacion{
+    width: 100%;
+    margin-left: 0;
+    font-size: larger;
+  }
+}

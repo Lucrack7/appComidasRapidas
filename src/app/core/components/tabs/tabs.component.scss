@@ -7,6 +7,17 @@
   border-radius: variables.$border-radius-mediano variables.$border-radius-mediano 0 0;
   overflow: hidden;
   height: 50px;
+  a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: #141414;
+  }
+  .bi-house{
+    margin-right: 12px;
+  }
 }
 
 .tab{
@@ -14,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  svg{
+  svg a{
     display: block;
     margin: auto;
     transition: 200ms ease-in-out;
@@ -24,4 +35,9 @@
 
 .seleccionado{
   background-color: variables.$color-principal;
+}
+
+
+.seleccionado:hover{
+  background-color: #1178a4;
 }

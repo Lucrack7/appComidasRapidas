@@ -49,4 +49,18 @@ export class ProductosService {
     })
     return productosFiltrados;
   }
+
+  async getPaginated(page: number, pageSize: number = 10): Promise<Producto[]> {
+    const productos = await this.getAll(); // Obtenemos todos los productos
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    return productos.slice(startIndex, endIndex);
+  }
+  
+  async buscarConPaginacion(parametros: Busqueda, page: number, pageSize: number = 10): Promise<Producto[]> {
+    const productosFiltrados = await this.buscar(parametros); // Usamos el método existente de búsqueda
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    return productosFiltrados.slice(startIndex, endIndex);
+  }
 }

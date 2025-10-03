@@ -9,36 +9,70 @@ import { Producto } from 'src/app/core/interfaces/productos';
 import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-buscar',
-    templateUrl: './buscar.component.html',
-    styleUrls: ['./buscar.component.scss'],
-    standalone: true,
-    imports: [CommonModule, FormsModule, TarjetaArticuloComponent,RouterModule]
+  selector: 'app-buscar',
+  templateUrl: './buscar.component.html',
+  styleUrls: ['./buscar.component.scss'],
+  standalone: true,
+  imports: [CommonModule, FormsModule, TarjetaArticuloComponent, RouterModule]
 })
 export class BuscarComponent {
   headerService = inject(HeaderService);
   productosService = inject(ProductosService);
-  productos:WritableSignal<Producto[]> = signal([])
-  cargando= signal(true);
+  productos: WritableSignal<Producto[]> = signal([]);
+  cargando = signal(true);
+  paginaActual = signal(1);
+  totalProductos = signal(0);
+  productosPorPagina = 10;
 
-  ngOnInit(): void {
-    this.headerService.titulo.set("Buscar");
-    this.productosService.getAll().then(res => {
-      this.productos.set(res);
-      this.cargando.set(false);
-    });
-  }
-
-  parametrosBusqueda:Busqueda = {
+  parametrosBusqueda: Busqueda = {
     texto: "",
     aptoCeliaco: false,
     aptoVegano: false,
+  };
+Math: any;
+
+  ngOnInit(): void {
+    this.headerService.titulo.set("Buscar");
+    this.cargarProductos();
   }
 
-  async buscar(){
+  async cargarProductos() {
     this.cargando.set(true);
-    this.productos.set(await this.productosService.buscar(this.parametrosBusqueda));
+    const productos = await this.productosService.getPaginated(this.paginaActual(), this.productosPorPagina);
+    this.productos.set(productos);
+    this.totalProductos.set((await this.productosService.getAll()).length); // Total para paginación
     this.cargando.set(false);
   }
 
+  async buscar() {
+    this.cargando.set(true);
+    this.paginaActual.set(1); // Reiniciar a la primera página al buscar
+    const productos = await this.productosService.buscarConPaginacion(
+      this.parametrosBusqueda,
+      this.paginaActual(),
+      this.productosPorPagina
+    );
+    this.productos.set(productos);
+    this.cargando.set(false);
+  }
+
+  async cambiarPagina(direccion: number) {
+    const nuevaPagina = this.paginaActual() + direccion;
+    if (nuevaPagina < 1 || nuevaPagina > Math.ceil(this.totalProductos() / this.productosPorPagina)) {
+      return; // No avanzar si está fuera del rango
+    }
+    this.paginaActual.set(nuevaPagina);
+    if (this.parametrosBusqueda.texto || this.parametrosBusqueda.aptoCeliaco || this.parametrosBusqueda.aptoVegano) {
+      // Si hay búsqueda activa, usar la búsqueda paginada
+      const productos = await this.productosService.buscarConPaginacion(
+        this.parametrosBusqueda,
+        nuevaPagina,
+        this.productosPorPagina
+      );
+      this.productos.set(productos);
+    } else {
+      // Cargar productos normales paginados
+      await this.cargarProductos();
+    }
+  }
 }
